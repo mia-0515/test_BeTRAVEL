@@ -86,7 +86,6 @@ h2 {
 /*-----------------------------
     header
 -------------------------------*/
-
 header {
     position: fixed;
     left: 0;
@@ -94,7 +93,13 @@ header {
     z-index: 3;
     width: 100%;
     background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
 }
+
+header h1 img {
+    height: 60px;
+}
+
 
 header nav ul {
     display: flex;
@@ -108,7 +113,15 @@ header nav ul li {
 header a {
     display: block;
     text-decoration: none;
-    font-size: 2.0rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #000;
+}
+
+header p {
+    display: block;
+    text-decoration: none;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #000;
 }
@@ -117,19 +130,26 @@ header a {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    position: relative;
 }
 
 .header-nav nav ul {
-    height: 70px;
+    height: 60px;
     margin-right: 12px;
     justify-content: space-between;
     align-items: flex-end;
 
 }
 
+.trigger {
+    display: block;
+    cursor: pointer;
+}
+
 .header-menu nav {
+    display: none;
     background-color: #F9423A;
-    width: 900px;
+    width: 800px;
     position: absolute;
     right: 0;
 }
@@ -144,13 +164,19 @@ header a {
     color: #fff;
 }
 
+header li:hover a,
+header li:hover p {
+    text-decoration: underline;
+}
+
+
 
 /*-----------------------------
     mainvisual
 -------------------------------*/
 
 .mainvisual {
-    margin-top: 70px;
+    margin-top: 60px;
     display: flex;
     height: 95vh;
 }
@@ -217,6 +243,10 @@ header a {
     font-size: 1.8rem;
 }
 
+.news-inner:hover p {
+    text-decoration: underline;
+}
+
 /*-----------------------------
     recommend
 -------------------------------*/
@@ -238,6 +268,11 @@ header a {
 .recommend ul li img {
     width: 100%;
     height: 100%;
+    transition: all .1s;
+}
+
+.recommend ul li img:hover {
+    transform: scale(102%);
 }
 
 .recommend ul li p {
@@ -271,6 +306,11 @@ header a {
 .campaign ul li a img {
     width: 100%;
     height: 100%;
+    transition: all .1s;
+}
+
+.campaign ul li a img:hover {
+    transform: scale(102%);
 }
 
 .campaign ul li p {
@@ -279,10 +319,10 @@ header a {
     margin-top: 20px;
 }
 
+
 /*-----------------------------
     travelabroad
 -------------------------------*/
-.travelabroad {}
 
 .travel-tips {
     position: relative;
@@ -318,6 +358,237 @@ header a {
     margin-right: 10px;
 }
 
-.button-moreinfo a:hover {
+.travel-tips:hover .button-moreinfo a {
     text-decoration: underline;
+}
+
+.plan {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-inner {
+    width: 720px;
+    height: 630px;
+    background-image: url(img/abroadplan.png);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.plan-inner h3 {
+    width: 360px;
+    height: 60px;
+    font-size: 2.0rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-inner ul {
+    list-style: none;
+    display: flex;
+}
+
+.plan-inner ul li {
+    width: 340px;
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+.plan-inner ul li img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+}
+
+.plan-inner ul li p {
+    font-size: 3.2rem;
+    letter-spacing: 0.1em;
+    margin-top: 12px;
+}
+
+.plan-inner ul li p:nth-of-type(1)::before {
+    content: "・";
+}
+
+.plan-inner ul li p:nth-of-type(2) {
+    font-size: 4.0rem;
+    text-align: right;
+    font-weight: 700;
+}
+
+.planbutton a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    text-decoration: none;
+    font-size: 2.4rem;
+    color: #363636;
+    width: 600px;
+    height: 80px;
+    border-radius: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    background-color: #fff;
+}
+
+.planbutton a:hover {
+    text-decoration: underline;
+}
+
+/*-----------------------------
+    service
+-------------------------------*/
+.service ul {
+    width: 1460px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+}
+
+.service a {
+    text-decoration: none;
+}
+
+.service a p {
+    color: #000;
+    margin-right: 40px;
+}
+
+.service ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-main {
+    margin-top: 60px;
+}
+
+.service-main li {
+    position: relative;
+}
+
+.service-img {
+    width: 720px;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.service-main a {
+    position: absolute;
+    bottom: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    width: 720px;
+    height: 70px;
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+.service-main p {
+    font-size: 2.4rem;
+}
+
+.service-sub {
+    margin-top: 20px;
+}
+
+.service-sub p {
+    font-size: 3.2rem;
+}
+
+.service a:hover p {
+    text-decoration: underline;
+}
+
+/*-----------------------------
+    domestictravel
+-------------------------------*/
+.domestictravel .plan-inner {
+    background-image: url(img/domesticplan.png);
+}
+
+/*-----------------------------
+    footer
+-------------------------------*/
+footer {
+    background-color: #FB776B;
+    padding-top: 140px;
+    padding-bottom: 60px;
+    margin-top: 240px;
+}
+
+footer a {
+    margin-top: 60px;
+    text-decoration: none;
+}
+
+footer a:hover p {
+    text-decoration: underline;
+}
+
+.footer-logo {
+    width: 21.25%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-logo img {
+    width: 100%;
+}
+
+.footer-other a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 70px;
+    width: 500px;
+}
+
+.footer-inner p {
+    color: #fff;
+    font-size: 2.4rem;
+}
+
+.footer-button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px #fff solid;
+    width: 500px;
+    height: 125px;
+}
+
+.footer-button p {
+    font-size: 3.2rem;
+}
+
+.footer-sns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-sns a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 260px;
+    height: 70px;
 }
