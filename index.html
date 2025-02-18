@@ -137,7 +137,7 @@
             </div>
             <div class="plan">
                 <div class="plan-inner">
-                    <h3 class="plan1">航空券+ホテルプラン</h3>
+                    <div class="plan1-button">航空券+ホテルプラン</div>
                     <ul>
                         <li>
                             <img src="img/abroad/kankoku1.jpg" alt="">
@@ -153,7 +153,7 @@
                     <div class="planbutton"><a href="">プランをもっとみる</a></div>
                 </div>
                 <div class="plan-inner">
-                    <h3 class="plan2">航空券のみ</h3>
+                    <div class="plan2-button">航空券のみ</div>
                     <ul>
                         <li>
                             <img src="img/abroad/kankoku2.jpg" alt="">
@@ -226,7 +226,7 @@
             </div>
             <div class="plan">
                 <div class="plan-inner">
-                    <h3>航空券+ホテルプラン</h3>
+                    <div class="plan1-button">航空券+ホテルプラン</div>
                     <ul>
                         <li>
                             <img src="img/domestic/osaka1.jpg" alt="">
@@ -242,7 +242,7 @@
                     <div class="planbutton"><a href="">プランをもっとみる</a></div>
                 </div>
                 <div class="plan-inner">
-                    <h3>航空券のみ</h3>
+                    <div class="plan2-button">航空券のみ</div>
                     <ul>
                         <li>
                             <img src="img/domestic/osaka2.jpg" alt="">
@@ -302,7 +302,14 @@
         });
         $('.switch').on('click', function () {
             $('.header-nav nav , .header-menu nav').fadeToggle(200);
+            $('.switch').toggleClass('active');
         });
+
+        $('.plan2-button').click(
+            function () {
+                $('.plan-inner').toggleClass('active');
+            }
+        );
 
     </script>
 
