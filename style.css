@@ -130,7 +130,7 @@ header {
     position: fixed;
     left: 0;
     top: 0;
-    z-index: 4;
+    z-index: 10;
     width: 100%;
     background-color: #fff;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
@@ -222,6 +222,22 @@ header a {
         background-color: #FFF;
         margin-top: 2.5px;
         margin-bottom: 2.5px;
+        transition: all .3s;
+    }
+
+    .switch.active span:nth-of-type(1) {
+        transform: rotate(45deg) translateX(4px) translateY(6px);
+        margin-left: 2px;
+
+    }
+
+    .switch.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+
+    .switch.active span:nth-of-type(3) {
+        transform: rotate(-45deg) translateX(4px) translateY(-6px);
+        margin-left: 2px;
     }
 }
 
@@ -616,7 +632,8 @@ header li:hover p {
     margin-right: 20px;
 }
 
-.plan-inner h3 {
+.plan1-button,
+.plan2-button {
     width: 50%;
     height: 60px;
     font-size: 2.0rem;
@@ -733,9 +750,11 @@ header li:hover p {
         z-index: 2;
     }
 
-    .plan-inner h3 {
+    .plan1-button,
+    .plan2-button {
         height: 30px;
         font-size: 1.1rem;
+        font-weight: 500;
     }
 
     .plan-inner ul {
@@ -783,7 +802,7 @@ header li:hover p {
         transform: scale(-1, 1);
     }
 
-    .plan-inner:nth-of-type(2) h3 {
+    .plan2-button {
         transform: scale(-1, 1);
         color: #FFF;
     }
@@ -797,22 +816,21 @@ header li:hover p {
     }
 
     /* ここまで */
-
     /* プラン2on */
-    .plan-inner:nth-of-type(2) {
+    .plan-inner.active .plan-inner:nth-of-type(2) {
         z-index: 3;
         background-image: url(img/abroadplan.png);
     }
 
-    .plan-inner:nth-of-type(2) h3 {
+    .plan-inner.active .plan2-button {
         color: #000;
     }
 
-    .plan-inner:nth-of-type(1) {
+    .plan-inner.active .plan-inner:nth-of-type(1) {
         background-image: url(img/closeplan.png);
     }
 
-    .plan-inner:nth-of-type(1) h3 {
+    .plan-inner.active .plan1-button {
         color: #fff;
     }
 
@@ -1024,6 +1042,72 @@ footer a:hover p {
 
 @media screen and (max-width:440px) {
     footer {
-        display: none;
+        background-color: #FB776B;
+        padding-top: 60px;
+        padding-bottom: 45px;
+        margin-top: 120px;
+    }
+
+    footer a {
+        margin-top: 10px;
+        text-decoration: none;
+    }
+
+    .footer-logo {
+        width: 136px;
+        height: 110px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+    }
+
+    .footer-logo img {
+        width: 100%;
+    }
+
+    .footer-other a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        height: 17px;
+        width: 120px;
+    }
+
+    .footer-inner p {
+        color: #fff;
+        font-size: 1.2rem;
+    }
+
+    .footer-button a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px #fff solid;
+        width: 120px;
+        height: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    .footer-button p {
+        font-size: 1.6rem;
+    }
+
+    .footer-sns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-sns a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        height: 18px;
     }
 }
