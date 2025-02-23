@@ -616,32 +616,50 @@ header li:hover p {
     transform: scale(102%);
 }
 
+/* ここから */
 .plan {
     margin-top: 60px;
+}
+
+/* nav */
+.plan-nav ul{
+    list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
-}
 
+}
+.plan-nav-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E2EFF8;
+    width: 18.75%;
+    height: 60px;
+    margin-right: 18.75%;
+    margin-left: 10px;
+    border-radius:10px 10px 0 0;
+}
+.plan-nav-button p{
+    font-size: 2.0rem;
+    color: #363636;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+/* end */
+
+/* plan-outer */
+.plan-outer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
 .plan-inner {
     width: 37.5%;
-    height: 630px;
-    background-image: url(img/abroadplan.png);
-    background-size: 100% 630px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.plan1-button,
-.plan2-button {
-    width: 50%;
-    height: 60px;
-    font-size: 2.0rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 570px;
+    background-color: #E2EFF8;
+    margin-left: 10px;
+    border-radius:0 10px 10px 10px;
 }
 
 .plan-inner ul {
@@ -657,13 +675,15 @@ header li:hover p {
 
 .plan-inner ul li img {
     object-fit: cover;
-    width: 98%;
+    width: 95%;
     height: 250px;
+    margin-left: 3%;
 }
 
 .plan-inner ul li p {
     font-size: 3.2rem;
     letter-spacing: 0.1em;
+    color: #363636;
     margin-top: 12px;
 }
 
@@ -692,17 +712,12 @@ header li:hover p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
     background-color: #fff;
 }
+/* end */
+/* ここまで */
 
 .planbutton a:hover {
     text-decoration: underline;
 }
-
-/* domestictravel */
-.domestictravel .plan-inner {
-    background-image: url(img/domesticplan.png);
-}
-
-/*ここまで*/
 
 @media screen and (max-width:440px) {
     .travel-tips {
@@ -728,38 +743,37 @@ header li:hover p {
         margin-right: 5px;
     }
 
-    .plan {
-        position: relative;
+    .plan{
         margin-top: 10px;
-        display: block;
-        width: 100%;
-        height: 315px;
     }
 
-    .plan-inner {
-        width: 90%;
-        height: 315px;
-        background-image: url(img/abroadplan.png);
-        background-size: 100% 315px;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .plan-inner:nth-of-type(1) {
-        z-index: 2;
-    }
-
-    .plan1-button,
-    .plan2-button {
+    .plan-nav-button{
+        width: 45%;
         height: 30px;
-        font-size: 1.1rem;
-        font-weight: 500;
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #636363;
+        border-radius:5px 5px 0 0;
     }
 
-    .plan-inner ul {
-        list-style: none;
-        display: flex;
+    .plan-nav-button.active{
+        background-color: #E2EFF8;
+    }
+
+    .plan-nav-button p{
+        font-size: 1.1rem;
+        color: #FFF;
+    }
+
+    .plan-nav-button.active p{
+        color: #363636;
+    }
+
+    .plan-inner{
+        width: 90%;
+        height: 285px;
+        margin-left: 0;
+        border-radius:0 0 5px 5px;
     }
 
     .plan-inner ul li {
@@ -786,6 +800,13 @@ header li:hover p {
         font-size: 2.4rem;
     }
 
+    .plan-inner.active{
+        display: block;
+    }
+    .plan-inner{
+        display: none;
+    }
+
     .planbutton a {
         margin-top: 30px;
         font-size: 1.3rem;
@@ -795,46 +816,6 @@ header li:hover p {
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
         background-color: #fff;
     }
-
-    /* 背景画像を反転 */
-    .plan-inner:nth-of-type(2) {
-        background-image: url(img/closeplan.png);
-        transform: scale(-1, 1);
-    }
-
-    .plan2-button {
-        transform: scale(-1, 1);
-        color: #FFF;
-    }
-
-    .plan-inner:nth-of-type(2) ul {
-        transform: scale(-1, 1);
-    }
-
-    .plan-inner:nth-of-type(2) div {
-        transform: scale(-1, 1);
-    }
-
-    /* ここまで */
-    /* プラン2on */
-    .plan-inner.active .plan-inner:nth-of-type(2) {
-        z-index: 3;
-        background-image: url(img/abroadplan.png);
-    }
-
-    .plan-inner.active .plan2-button {
-        color: #000;
-    }
-
-    .plan-inner.active .plan-inner:nth-of-type(1) {
-        background-image: url(img/closeplan.png);
-    }
-
-    .plan-inner.active .plan1-button {
-        color: #fff;
-    }
-
-    /* ここまで */
 }
 
 /*-----------------------------
@@ -966,6 +947,135 @@ header li:hover p {
         margin-right: 10px;
     }
 }
+
+/*  */
+/* nav */
+.domestic-plan-nav-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F8E2E2;
+    width: 18.75%;
+    height: 60px;
+    margin-right: 18.75%;
+    margin-left: 10px;
+    border-radius:10px 10px 0 0;
+}
+.domestic-plan-nav-button p{
+    font-size: 2.0rem;
+    color: #363636;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+}
+/* end */
+
+/* plan-outer */
+.domestic-plan-inner {
+    width: 37.5%;
+    height: 570px;
+    background-color: #F8E2E2;
+    margin-left: 10px;
+    border-radius:0 10px 10px 10px;
+}
+
+.domestic-plan-inner ul {
+    list-style: none;
+    display: flex;
+}
+
+.domestic-plan-inner ul li {
+    width: 50%;
+    margin-left: 0.14%;
+    margin-top: 14px;
+}
+
+.domestic-plan-inner ul li img {
+    object-fit: cover;
+    width: 95%;
+    height: 250px;
+    margin-left: 3%;
+}
+
+.domestic-plan-inner ul li p {
+    font-size: 3.2rem;
+    letter-spacing: 0.1em;
+    color: #363636;
+    margin-top: 12px;
+}
+
+.domestic-plan-inner ul li p:nth-of-type(1)::before {
+    content: "・";
+}
+
+.domestic-plan-inner ul li p:nth-of-type(2) {
+    text-align: right;
+    font-weight: 700;
+}
+/* end */
+/* ここまで */
+
+@media screen and (max-width:440px) {
+    .domestic-plan-nav-button{
+        width: 45%;
+        height: 30px;
+        margin-right: 0;
+        margin-left: 0;
+        background-color: #636363;
+        border-radius:5px 5px 0 0;
+    }
+
+    .domestic-plan-nav-button.active{
+        background-color: #F8E2E2;
+    }
+
+    .domestic-plan-nav-button p{
+        font-size: 1.1rem;
+        color: #FFF;
+    }
+
+    .domestic-plan-nav-button.active p{
+        color: #363636;
+    }
+
+    .domestic-plan-inner{
+        width: 90%;
+        height: 285px;
+        margin-left: 0;
+        border-radius:0 0 5px 5px;
+    }
+
+    .domestic-plan-inner ul li {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+
+    }
+
+    .domestic-plan-inner ul li img {
+        object-fit: cover;
+        width: 98%;
+        height: 125px;
+        margin-left: 2px;
+    }
+
+    .domestic-plan-inner ul li p {
+        font-size: 1.6rem;
+        margin-top: 6px;
+    }
+
+    .domestic-plan-inner ul li p:nth-of-type(2) {
+        font-size: 2.4rem;
+    }
+
+    .domestic-plan-inner.active{
+        display: block;
+    }
+    .domestic-plan-inner{
+        display: none;
+    }
+}
+/*  */
 
 /*-----------------------------
     footer
